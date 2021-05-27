@@ -305,17 +305,56 @@ a {
                     font-weight: 400;
                     font-size: 12px;
                     .capacity {
+                        margin-top: 3px;
+                        position: relative;
+                        padding-left: 20px;
                         &::before {
+                        position: absolute;
                         background-image: url(../img/user.svg);
                         display: block;
                         content: '';
-                        background-repeat: no-repeat;  
+                        background-repeat: no-repeat;
+                        width: 14px;
+                        height: 14px;
+                        left: 0;
+                        top: 0;
+                        }   
+                    }
+                    .rooms {
+                        position: relative;
+                        padding-left: 27px;
+                        margin-top: 8px;
+                        &::before {
+                        position: absolute;
+                        background-image: url(../img/home.svg);
+                        display: block;
+                        content: '';
+                        background-repeat: no-repeat;
+                        width: 14px;
+                        height: 14px;
+                        left: 0;
+                        top: 0;
                         }   
                     }
                 }
                 &.bottom {
                     font-weight: 600;
                     margin-top: 20px;
+                    .call {
+                        position: relative;
+                        padding-left: 20px;
+                        &::before {
+                        position: absolute;
+                        background-image: url(../img/phone.svg);
+                        display: block;
+                        content: '';
+                        background-repeat: no-repeat;
+                        width: 14px;
+                        height: 14px;
+                        left: 0;
+                        top: 1px;
+                        }   
+                    }
                 }
             }
         }
@@ -373,6 +412,9 @@ a {
 
 .main-second {
     margin-top: 68px;
+    .package-summery {
+        margin-top: 40px;
+    }
     h2 {
         font-weight: 700;
         font-size: 24px;
@@ -402,13 +444,90 @@ a {
 }
 
 .ul-box {
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
+    .description {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        padding-left: 0;
+        margin-left: 32px;
+        margin-top: 43px;
+        position: relative;
+        &::before {
+            position: absolute;
+            background-image: url(../img/check.svg);
+            display: block;
+            content: '';
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 18px;
+            left: -37px;
+            top: 5px;
+        }
+        span {
+            margin-top: 40px;
+            display: block;
+            font-size: 10px;
+            font-style: italic;
+        }
+        &.info {
+            justify-content: space-between;
+            
+        }
+    }
+    .date {
+        font-size: 14px;
+        position: relative;
+        margin-top: 43px;
+        &::before {
+            position: absolute;
+            background-image: url(../img/date.svg);
+            display: block;
+            content: '';
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 18px;
+            left: -29px;
+            top: 0;
+        }
+    }
 }
 
 .ul-item {
-    list-style-image: url(../img/check.svg);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    padding-left: 48px;
+    padding-left: 0;
+    li:not(:last-child) {
+        margin-bottom: 21px;
+    }
+    li:first-child {
+        margin-top: 27px;
+    }
+    .p-item {
+        color: $red;
+        font-size: 13px;
+        font-weight: 600;
+        margin-left: -14px;
+    }
+
 }
+
+.li-item {
+    position: relative;
+    list-style: none;
+    padding-left: 17px;
+    &::before {
+        position: absolute;
+        background-image: url(../img/check.svg);
+        display: block;
+        content: '';
+        background-repeat: no-repeat;
+        width: 18px;
+        height: 18px;
+        left: -15px;
+        top: 0;
+    }
+}
+
+
