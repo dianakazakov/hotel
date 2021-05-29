@@ -3,6 +3,7 @@
 body {
     font-family: 'Mulish', sans-serif;
     color: $dark-gray;
+    background-color: $light-blue;
 }
 
 a {
@@ -414,6 +415,8 @@ a {
     margin-top: 68px;
     .package-summery {
         margin-top: 40px;
+        margin-bottom: 65px;
+
     }
     h2 {
         font-weight: 700;
@@ -426,6 +429,9 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
+    &-info {
+        background-color: #fff;
+    }
 }
 
 .blue-row {
@@ -446,6 +452,24 @@ a {
 .ul-box {
     justify-content: space-around;
     display: flex;
+    background-color: #fff;
+    &.info {
+        padding-left: -32px;
+        &.etc {
+                .item-1 {
+                    margin-left: -62px;
+                }
+                .item-2 {
+                    margin-left: 40px;
+                }
+                .item-3 {
+                    margin-right: 56px;
+                }
+        }
+        .ul-item {
+            margin-left: -42px;
+        }
+    }
     .description {
         display: block;
         font-size: 12px;
@@ -453,6 +477,7 @@ a {
         padding-left: 0;
         margin-left: 32px;
         margin-top: 43px;
+        padding-bottom: 27px;
         position: relative;
         &::before {
             position: absolute;
@@ -471,10 +496,7 @@ a {
             font-size: 10px;
             font-style: italic;
         }
-        &.info {
-            justify-content: space-between;
-            
-        }
+        
     }
     .date {
         font-size: 14px;
@@ -498,6 +520,7 @@ a {
     font-size: 12px;
     font-weight: 400;
     padding-left: 0;
+    padding-bottom: 27px;
     li:not(:last-child) {
         margin-bottom: 21px;
     }
@@ -509,6 +532,7 @@ a {
         font-size: 13px;
         font-weight: 600;
         margin-left: -14px;
+        padding-bottom: 10px;
     }
 
 }
@@ -530,4 +554,23 @@ a {
     }
 }
 
+hr {
+    border: none;
+    border-top: 3px dotted $gray-line;
+    display: block;
+    padding-right: 37px;
+    padding-left: 25px;
+    width: 964px;
+}
 
+.other-packages {
+    display: grid;
+    grid-template-areas: 
+        "package-item-1 package-item-1 package-item-2"
+        "package-item-3 package-item-4 package-item-5";
+    .package-item {
+        background-color: $red;
+        width: 350px;
+        height: 500px;
+    }
+}
