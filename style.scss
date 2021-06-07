@@ -234,16 +234,9 @@ a {
             font-weight: 700;
         }
         &-flash {
-            display: flex;
-            background-color: $red;
             width: 70px;
             height: 20px;
-            border-radius: 3px;
-            color: white;
-            font-weight: 600;
             font-size: 10px;
-            justify-content: center;
-            align-items: center;
             margin-top: 4px;
             margin-left: 15px;
         }
@@ -308,7 +301,7 @@ a {
                     .capacity {
                         margin-top: 3px;
                         position: relative;
-                        padding-left: 20px;
+                        padding-left: 28px;
                         &::before {
                         position: absolute;
                         background-image: url(../img/user.svg);
@@ -368,19 +361,11 @@ a {
         display: flex;
 
         &-button {
-            background-color: $red;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             width: 295px;
             height: 45px;
-            border-radius: 4px;
             position: absolute;
             bottom: 0;
             border: 0;
-            font-weight: 600;
-            font-size: 14px;
         }
         &-cost {
             font-size: 10px;
@@ -429,6 +414,7 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
+    margin-top: -40px;
     &-info {
         background-color: #fff;
     }
@@ -565,12 +551,328 @@ hr {
 
 .other-packages {
     display: grid;
-    grid-template-areas: 
-        "package-item-1 package-item-1 package-item-2"
-        "package-item-3 package-item-4 package-item-5";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 500px);
+    gap: 30px;
     .package-item {
-        background-color: $red;
-        width: 350px;
-        height: 500px;
+        background-color: $dark-blue;
+        border-radius: 7px;
+        &.package-item-1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+.package-item-1 {
+    &.view {
+        background-image: url(../img/blue-heaven.svg);
+        .flash {
+            width: 95px;
+            height: 30px;
+            font-size: 12px;
+        }
+    }
+    &.description {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1fr 3fr 0.5fr 0.5fr 0.5fr 1fr;
+        padding: 46px 21px 30px 44px;
+        .star {
+            display: flex;
+            &-item {
+                display: block;
+                background-image: url('../img/golden-star.svg');
+                content: '';
+                border: none;
+                width: 8px;
+                height: 8px;
+                background-repeat: no-repeat;        
+            }
+        }
+    }
+}
+
+.description {
+    &-item {
+        font-size: 12px;
+        font-weight: 400;
+        color: #fff;
+        position: relative;
+        &.cost {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            .price {
+                &-old {
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
+                &-new {
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+        }
+        }
+        &-button {
+            position: absolute;
+            right: 0;
+            width: 120px;
+            height: 40px;
+        }
+    }
+    &.title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+    }
+    &.text {
+        font-size: 14px;
+        color: #fff;
+        line-height: 23px;
+    }
+    .capacity {
+        position: relative;
+        padding-left: 20px;
+        &::before {
+        position: absolute;
+        background-image: url(../img/user.svg);
+        display: block;
+        content: '';
+        background-repeat: no-repeat;
+        width: 14px;
+        height: 14px;
+        left: 0;
+        top: 0;
+        }          
+    }
+    .rooms {
+        position: relative;
+        padding-left: 27px;
+        &::before {
+        position: absolute;
+        background-image: url(../img/home.svg);
+        display: block;
+        content: '';
+        background-repeat: no-repeat;
+        width: 14px;
+        height: 14px;
+        left: 0;
+        top: 0;
+        }   
+    }
+    .map {
+        position: relative;
+        padding-left: 27px;
+        &::before {
+        position: absolute;
+        background-image: url(../img/map-pin.svg);
+        display: block;
+        content: '';
+        background-repeat: no-repeat;
+        width: 14px;
+        height: 14px;
+        left: 0;
+        top: 0;
+        }   
+    }
+}
+
+.h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+}
+
+.flash {
+    display: flex;
+    background-color: $red;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    margin-top: 26px;
+    &-small {
+        width: 60px;
+        height: 18px;
+        font-size: 8px;
+    }
+}
+
+
+
+.button {
+    background-color: $red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    &-small {
+        position: absolute;
+            right: 21px;
+            width: 120px;
+            height: 40px;
+    }
+}
+
+.package-item-base {
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    color: #fff;
+    .description {
+        position: relative;
+        padding: 30px 21px 25px 32px;
+        &-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        &-map {
+            position: relative;
+            padding-left: 27px;
+            margin-top: 23px;
+            font-size: 12px;
+            &::before {
+                position: absolute;
+                background-image: url(../img/map-pin.svg);
+                display: block;
+                content: '';
+                background-repeat: no-repeat;
+                width: 14px;
+                height: 14px;
+                left: 0;
+                top: 0;
+            }
+        }
+        &-capacity {
+            position: relative;
+            padding-left: 28px;
+            margin-top: 11px;
+            font-size: 12px;
+            &::before {
+            position: absolute;
+            background-image: url(../img/user.svg);
+            display: block;
+            content: '';
+            background-repeat: no-repeat;
+            width: 14px;
+            height: 14px;
+            left: 0;
+            top: 0;
+            }  
+        }
+        &-rooms {
+            position: relative;
+            padding-left: 27px;
+            margin-top: 8px;
+            font-size: 12px;
+            &::before {
+            position: absolute;
+            background-image: url(../img/home.svg);
+            display: block;
+            content: '';
+            background-repeat: no-repeat;
+            width: 14px;
+            height: 14px;
+            left: 0;
+            top: 0;
+            }
+        }
+        &-cost {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: max-content;
+            margin-top: 14%;
+            &-price {
+                &-old {
+                    font-size: 14px;
+                }
+                &-new {
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+            }         
+        }
+    }
+        &.belle {
+        .view {
+                background-image: url(../img/belle.svg);
+            }
+        }
+        &.white-palace {
+            .view {
+                background-image: url(../img/white-palace.svg);
+            }
+        }
+        &.luxury-palace {
+            .view {
+                background-image: url(../img/luxury-palace.svg);
+            }
+        }
+        &.five-star {
+            .view {
+                background-image: url(../img/five-star.svg);
+            }
+        }
+}
+
+.feedback {
+    padding-top: 40px;
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 36px;
+    }
+    .rev-slider {
+        width: 731px;
+        height: 280px;
+        background-color: #fff;
+        margin-top: 115px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        .photo {
+            background-image: url(../img/photo.svg);
+            background-repeat: no-repeat;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-top: -50%;
+        }
+        .name {
+            display: flex;
+            max-width: max-content;
+            color: $red;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 15%;
+        }
+        .date {
+            display: flex;
+            width: 100px;
+            font-size: 10px;            
+        }
+        .star {
+            padding-left: 25px;
+            margin-top: -16px;
+        }
+        .description {
+            font-size: 12px;
+            width: 80%;
+            height: 40%;
+            margin: auto;
+        }
     }
 }
